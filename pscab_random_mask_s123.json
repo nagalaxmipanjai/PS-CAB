@@ -1,0 +1,77 @@
+{
+  "run_id": "pscab_random_mask_s123",
+  "kind": "main",
+  "condition": "pscab_random_mask",
+  "seed": 123,
+  "spec": {
+    "use_pscab": true,
+    "gate": "learned",
+    "gamma": "learned",
+    "mask": "random"
+  },
+  "status": "complete",
+  "env": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu": "Tesla T4",
+    "sacrebleu": "2.6.0",
+    "spacy": true,
+    "env_pin": {
+      "transformers": "5.16.1",
+      "sacrebleu": "2.6.0"
+    },
+    "transformers": "5.16.1"
+  },
+  "steps_trained": 3000,
+  "best_step": 2000,
+  "best_val_nll": 1.1759511312815285,
+  "stop_reason": "early_stopping",
+  "train_hours": 2.6911836948659684,
+  "sec_per_step": 3.229420433839162,
+  "nonfinite_loss_batches": 0,
+  "total_parameters": 612978689,
+  "pscab_added_parameters": 2099201,
+  "gamma_at_best": 0.17150789499282837,
+  "generation": {
+    "explicit_kwargs": {
+      "num_beams": 4,
+      "max_new_tokens": 128,
+      "forced_bos_token_id": 250045
+    },
+    "model_generation_config": {
+      "max_length": 200,
+      "num_beams": 5,
+      "early_stopping": true,
+      "length_penalty": null,
+      "no_repeat_ngram_size": null,
+      "forced_eos_token_id": 2,
+      "decoder_start_token_id": 2,
+      "repetition_penalty": null,
+      "do_sample": null
+    }
+  },
+  "val_metrics": {
+    "bleu": 47.8943,
+    "chrf++": 59.7047,
+    "n": 4000,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:flores200|smooth:exp|version:2.6.0",
+    "chrf_signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.6.0",
+    "ter": 58.7177
+  },
+  "inference_sentences_per_sec": 15.006464691381828,
+  "diagnostics": {
+    "gamma": 0.17150789499282837,
+    "bias_to_hidden_norm_ratio_mean": 0.30940808253931584,
+    "bias_to_hidden_norm_ratio_median": 0.3069622814655304,
+    "n_prep_positions": 2194,
+    "n_other_positions": 20162,
+    "gate_trained_prep_mean": 0.48036853799302687,
+    "gate_trained_other_mean": 0.4714112541553414,
+    "gate_trained_auc_prep_vs_other": 0.5541206812783636,
+    "gate_init_prep_mean": 0.49983698197571713,
+    "gate_init_other_mean": 0.5005149999189065,
+    "gate_init_auc_prep_vs_other": 0.4263845486020843
+  },
+  "wall_hours_total": 2.861608684791459
+}

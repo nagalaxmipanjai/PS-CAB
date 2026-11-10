@@ -1,0 +1,63 @@
+{
+  "run_id": "baseline_s123",
+  "kind": "main",
+  "condition": "baseline",
+  "seed": 123,
+  "spec": {
+    "use_pscab": false,
+    "gate": "learned",
+    "gamma": "learned",
+    "mask": "true"
+  },
+  "status": "complete",
+  "env": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu": "Tesla T4",
+    "sacrebleu": "2.6.0",
+    "spacy": true,
+    "env_pin": {
+      "transformers": "5.16.1",
+      "sacrebleu": "2.6.0"
+    },
+    "transformers": "5.16.1"
+  },
+  "steps_trained": 3000,
+  "best_step": 2000,
+  "best_val_nll": 1.1693995932871988,
+  "stop_reason": "early_stopping",
+  "train_hours": 2.6701123844252694,
+  "sec_per_step": 3.204134861310323,
+  "nonfinite_loss_batches": 0,
+  "total_parameters": 610879488,
+  "pscab_added_parameters": 0,
+  "generation": {
+    "explicit_kwargs": {
+      "num_beams": 4,
+      "max_new_tokens": 128,
+      "forced_bos_token_id": 250045
+    },
+    "model_generation_config": {
+      "max_length": 200,
+      "num_beams": 5,
+      "early_stopping": true,
+      "length_penalty": null,
+      "no_repeat_ngram_size": null,
+      "forced_eos_token_id": 2,
+      "decoder_start_token_id": 2,
+      "repetition_penalty": null,
+      "do_sample": null
+    }
+  },
+  "val_metrics": {
+    "bleu": 47.9916,
+    "chrf++": 59.7705,
+    "n": 4000,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:flores200|smooth:exp|version:2.6.0",
+    "chrf_signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.6.0",
+    "ter": 58.4943
+  },
+  "inference_sentences_per_sec": 15.095792511637645,
+  "wall_hours_total": 2.836335824595557
+}

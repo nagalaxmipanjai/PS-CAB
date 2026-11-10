@@ -1,0 +1,99 @@
+{
+  "run_id": "baseline_s42",
+  "kind": "main",
+  "condition": "baseline",
+  "seed": 42,
+  "spec": {
+    "use_pscab": false,
+    "gate": "learned",
+    "gamma": "learned",
+    "mask": "true"
+  },
+  "status": "complete",
+  "env": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu": "Tesla T4",
+    "sacrebleu": "2.6.0",
+    "spacy": true,
+    "env_pin": {
+      "transformers": "5.16.1",
+      "sacrebleu": "2.6.0"
+    },
+    "transformers": "5.16.1"
+  },
+  "steps_trained": 3000,
+  "best_step": 2000,
+  "best_val_nll": 1.1676127440812925,
+  "stop_reason": "early_stopping",
+  "train_hours": 2.7236719783147176,
+  "sec_per_step": 3.268406373977661,
+  "nonfinite_loss_batches": 0,
+  "total_parameters": 610879488,
+  "pscab_added_parameters": 0,
+  "generation": {
+    "explicit_kwargs": {
+      "num_beams": 4,
+      "max_new_tokens": 128,
+      "forced_bos_token_id": 250045
+    },
+    "model_generation_config": {
+      "max_length": 200,
+      "num_beams": 5,
+      "early_stopping": true,
+      "length_penalty": null,
+      "no_repeat_ngram_size": null,
+      "forced_eos_token_id": 2,
+      "decoder_start_token_id": 2,
+      "repetition_penalty": null,
+      "do_sample": null
+    }
+  },
+  "val_metrics": {
+    "bleu": 48.0594,
+    "chrf++": 59.8039,
+    "n": 4000,
+    "bleu_signature": "nrefs:1|case:mixed|eff:no|tok:flores200|smooth:exp|version:2.6.0",
+    "chrf_signature": "nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.6.0",
+    "ter": 58.2082
+  },
+  "inference_sentences_per_sec": 14.873334249787957,
+  "attention": {
+    "n_sentences": 300,
+    "prep_mass_last_layer": 0.00425793717460086,
+    "prep_mass_mean_layers": 0.017030090810731053,
+    "prep_mass_last_layer_over_uniform": 0.04255203164725136
+  },
+  "robustness_val": [
+    {
+      "perturbation": "none",
+      "bleu": 47.5404,
+      "chrf++": 59.353,
+      "delta_bleu": 0.0,
+      "delta_chrf++": 0.0
+    },
+    {
+      "perturbation": "punct_spacing",
+      "bleu": 47.3054,
+      "chrf++": 59.2803,
+      "delta_bleu": -0.235,
+      "delta_chrf++": -0.0727
+    },
+    {
+      "perturbation": "lowercase",
+      "bleu": 42.5204,
+      "chrf++": 56.3803,
+      "delta_bleu": -5.02,
+      "delta_chrf++": -2.9727
+    },
+    {
+      "perturbation": "drop_final_punct",
+      "bleu": 47.4069,
+      "chrf++": 59.2541,
+      "delta_bleu": -0.1335,
+      "delta_chrf++": -0.0989
+    }
+  ],
+  "wall_hours_total": 3.0367670696311526
+}
